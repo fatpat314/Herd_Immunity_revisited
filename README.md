@@ -27,11 +27,11 @@ The program consists of 4 classes: `Person`, `Virus`, `Simulation`, and `FileWri
 
 2. You will need to complete the following methods inside the Simulation class (more details in the starter code):
 
-* `print_population:` prints out each person in the population
+<!-- * `print_population:` prints out each person in the population -->
 
-* `get_infected:` returns a list of all the infected people in the population
+<!-- * `get_infected:` returns a list of all the infected people in the population -->
 
-* `simulation_should_continue:` determines whether the simulation should continue based on the state of the population
+<!-- * `simulation_should_continue:` determines whether the simulation should continue based on the state of the population -->
 
 * `determine_survival:` checks if each of the current infected died or survived and became vaccinated, occurs after each time step
 

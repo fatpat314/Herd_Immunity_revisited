@@ -3,6 +3,8 @@ from Person import Person
 from Virus import Virus
 from FileWriter import FileWriter
 
+
+
 class Simulation:
 
     def __init__(self, initial_vaccinated, initial_infected, initial_healthy, virus, resultsfilename):
@@ -20,8 +22,11 @@ class Simulation:
 
         self.total_dead = 0
         self.total_vaccinated = initial_vaccinated
+        self.infected_people = []
 
         self.file_writer = FileWriter(resultsfilename)
+
+
 
 
     def create_population(self):
@@ -44,21 +49,41 @@ class Simulation:
         '''Prints out every person in the population and their current attributes''' #(is vacced and is alive)
         #TODO: finish this method
         for person in self.population:
-            print(person)
+            print(person, person.is_vaccinated, person.is_alive)
+
 
     def get_infected(self):
         '''Gets all the infected people from the population and returns them as a list'''
         #TODO: finish this method
+        self.infected_people = []
+        for person in self.population:
+            if person.infection:
+                infected_people.append(person)
+            return infected_people
+
 
 
 
     def simulation_should_continue(self):
         '''Determines whether the simulation should continue.
-        If everyone in the population is dead then return False, the simulation should not continue
-        If everyone in the population is vaccinated return False
-        If there are no more infected people left and everyone is either vaccinated or dead return False
-        In all other cases return True'''
-        #TODO: finish this method
+        √ If everyone in the population is dead then return False, the simulation should not continue
+        √? If everyone in the population is vaccinated return False
+        √If there are no more infected people left and everyone is either vaccinated or dead return False
+        √In all other cases return True'''
+        #TODO: finish this method if population.is_alive = 0 return False.
+        if self.population == 0:
+            return False
+
+        elif self.total_vaccinated == self.population_size:
+            return False
+
+        elif len(self.infected_people) == 0:
+            return False
+
+        else:
+            return True
+
+
 
 
     def run(self):
