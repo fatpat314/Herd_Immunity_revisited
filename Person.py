@@ -22,8 +22,8 @@ class Person:
 
         #TODO: finish this method
         if self.infection is not None:
-            rm_number = random.randfloat(0.0, 1.0)
-            if rm_number <= self.mortality_num:
+            rm_number = random.randrange(0.0, 1.0)
+            if rm_number <= self.infection.mortality_num:
                 self.is_alive = False
                 return False
 
