@@ -6,3 +6,11 @@ class Virus:
         self.name = name #string
         self.reproduction_num = reproduction_num #a float number between 0.0 and 1.0
         self.mortality_num = mortality_num #a float number between 0.0 and 1.0
+
+    def test_virus_instantiation():
+    #TODO: Create your own test that models the virus you are working with
+        '''Check to make sure that the virus instantiator is working.'''
+        virus = Virus("HIV", 0.8, 0.3)
+        assert virus.name == "HIV"
+        assert virus.repro_rate == 0.8
+        assert virus.mortality_rate == 0.3
