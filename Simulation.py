@@ -133,8 +133,8 @@ class Simulation:
                 infected_person.is_alive = False
                 self.total_dead += 1
 
-            #elif infected_person.did_survive_infection() == True:
-            else:
+            elif infected_person.did_survive_infection() == True:
+            # else:
                 infected_person.infection = None
                 infected_person.is_vaccinated == True
                 self.total_vaccinated += 1
@@ -164,8 +164,8 @@ class Simulation:
         √ if the random person is not alive return and do nothing
         √ if the random person is vaccinated return and do nothing
         √ if the random person is not vaccinated:
-            √ generate a random float between 0 and 1
-            √ if the random float is less then the infected person's virus reproduction number then the random person is infected
+        √ generate a random float between 0 and 1
+        √ if the random float is less then the infected person's virus reproduction number then the random person is infected
             othersie the random person is vaccinated and one is added to the total vaccinated'''
         #TODO: finish this method
         if infected_person is random_person:
@@ -186,12 +186,12 @@ class Simulation:
             # print("test5")
             if random_float < infected_person.infection.reproduction_num:
                 random_person.infection = infected_person.infection
-                # print("test5")
+                # print("test6")
 
             else:
                 random_person.is_vaccinated = True
                 self.total_vaccinated += 1
-                print("test5")
+                # print("test7")
 
 
 
@@ -206,7 +206,7 @@ if __name__ == "__main__":
     initial_healthy = 100
     initial_vaccinated = 2
 
-    initial_infected = 5
+    initial_infected = 50
 
     virus = Virus(virus_name, reproduction_num, mortality_num)
 
